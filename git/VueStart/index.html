@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>VueJS practices</title>
+  <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+
+<body>
+  <div id="app" v-cloak>
+   <p>{{fullName}}</p>
+   <p><a :href="url" target= "_blank"> Google</a> </p>
+   <p  v-html="raw_url" ></p>
+   <p>{{age}}</p>
+
+  <hr/>
+  <label>First name</label>
+  <input type="text" v-model="firstName"></input>
+
+  <label>Middle name</label>
+  <input type="text" @keyup.enter="updateMiddleName"></input>
+
+  <label>Last name</label>
+  <input type="text" :value="" @input="updateLastName"></input>
+
+  <label>Age</label>
+  <input type="text" v-model="age"></input>
+
+  
+    <button type="button"  @click.ctrl= "increment"> Increment</button>
+    <pre></pre>
+    <button type="button" v-on:click="decrement"> Decrement</button>
+  </div>
+<!--
+  <div id="app2">
+    {{FirstName}}
+    {{LastName}}
+  </div>
+-->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
